@@ -1,0 +1,29 @@
+# Ignore node_modules in all folders
+node_modules/
+**/node_modules/
+
+# Ignore environment variable files
+.env
+**/.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Build outputs
+dist/
+build/
+
+# React-specific
+frontend/.next/
+frontend/.cache/
+
+# Coverage reports
+coverage/
