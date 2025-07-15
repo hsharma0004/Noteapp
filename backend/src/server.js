@@ -1,21 +1,24 @@
-import express from "express"
-import notesRoutes from "./routes/notesRoutes.js"
+import express from "express";
+import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
+import cors from "cors"
 
 dotenv.config();
 
-const app = express()
-const PORT = process.env.PORT || 5001
+const app = express();
+const PORT = process.env.PORT || 5001;
+
+// Middleware
+// 429 Too many request error
+app.use(express.json());
+app.use(cors({ origin: "http://localhost:5173" }));
 
 
-connectDB();
-
-// Middleware 
-app.use(express.json())
 app.use("/api/notes", notesRoutes);
 
-
-app.listen(5001, ()=> {
-  console.log("Server started on PORT : ", PORT);
-})
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log("Server started on PORT : ", PORT);
+  });
+});
