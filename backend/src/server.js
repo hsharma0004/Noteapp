@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 // 429 Too many request error
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({ origin: "http://localhost:5173",
+    })
+);
 
 
 app.use("/api/notes", notesRoutes);
