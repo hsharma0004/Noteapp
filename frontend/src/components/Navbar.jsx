@@ -1,4 +1,4 @@
-import {Link} from "react-router"
+import { Link } from "react-router"
 import { PlusIcon } from 'lucide-react'
 
 const Navbar = () => {
@@ -6,13 +6,13 @@ const Navbar = () => {
 
     <div className='mx-auto max-w-6xl p-4'>
       <div className='flex items-center justify-between'>
-        <h1 className='text-3xl font-bold text-primary font-mono tracking-tighter'>
-          ThinkerBoard
+        <h1 className='text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-green-600 to-emerald-800 font-["Pacifico",_cursive] tracking-normal drop-shadow-md'>
+          IdeaVault
         </h1>
         <div className='flex items-center gap-4'>
 
           <Link to={"/create"} className='btn btn-primary'>
-            <PlusIcon className='size-5'/>
+            <PlusIcon className='size-5' />
             <span> New Note </span>
           </Link>
 
